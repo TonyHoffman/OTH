@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  email: MyString
+  fan: 1
+  league_id: 1
+  password: MyString
+  fan_id: 1
+  user_name: MyString
+  is_admin: false
+
+two:
+  email: MyString
+  fan: 1
+  league_id: 1
+  password: MyString
+  fan_id: 1
+  user_name: MyString
+  is_admin: false
