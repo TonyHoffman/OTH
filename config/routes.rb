@@ -1,4 +1,6 @@
 OTH::Application.routes.draw do
+  resources :franchises
+
   resources :fans
 
   # The priority is based upon order of creation:
