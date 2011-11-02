@@ -1,6 +1,88 @@
 <h1>Editing franchise</h1>
-
+<div class="franchise_edit">
+  
 <%= render 'form' %>
+
+<h2>Add a game:</h2>
+<%= form_for([@franchise, @franchise.scheduled_games.build]) do |game| %>
+  <div class="field">
+    <%= game.label :opponent %><br />
+    <%= game.select :opponent, Franchise::TEAMS %>
+  </div>
+  <div class="field">
+    <%= game.label :date %><br />
+    <%= game.text_field :date %>
+  </div>
+  <div class="actions">
+    <%= game.submit %>
+  </div>
+<% end %>
+
+
+<div class="player">
+<h2>Add a player:</h2>
+<%= form_for([@franchise, @franchise.players.build]) do |player| %>
+
+  <div class="field">
+    <%= player.label :first_name %>
+    <%= player.text_field :first_name %>
+  </div>
+  
+  <div class="field">
+    <%= player.label :last_name %>
+    <%= player.text_field :last_name %>
+  </div>
+  
+  <div class="field">
+    <%= player.label :position %>
+    <%= player.select :position, Player::POSITIONS %>
+  </div>
+  
+  <div class="field">
+    <%= player.label :first_game %>
+    <%= player.text_field :first_game %>
+  </div>
+  
+  <div class="field">
+    <%= player.label :last_game %>
+    <%= player.text_field :last_game %>
+  </div>
+  <div class="actions">
+    <%= player.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Show', @franchise %> |
 <%= link_to 'Back', franchises_path %>
+
+</div>
+
+<div class="scheduled_games">
+<% @franchise.scheduled_games.each do |game| %>
+  <p class="games">
+ 
+    <span class="date">   
+    <b>Opponent:</b>
+    <%= game.opponent %>
+ 
+ 
+    <b>date:</b>
+    <%= game.date %>
+    
+  <%= link_to 'Edit',edit_franchise_scheduled_game_path(@franchise) %> 
+  </span> </p>
+<% end %>
+</div>
+
+<div class="players">
+  <p>
+  <% @franchise.players.sort_by{|t|t.last_name || 'A'}.each do |player|%>
+    <span class="date">
+     <b>Name: </b> <%= player.last_name %> <b>Position</b>  
+     <%= link_to 'Edit',edit_franchise_player_path(@franchise) %> 
+    
+    </span>
+  <% end %>
+  </p>  
+</div>
