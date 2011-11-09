@@ -1,0 +1,19 @@
+// Place all the styles related to the ScheduledGames controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.scheduled_games{
+float:right;
+}
+
+.team_details{
+  width: 500px;
+  .scheduled_games{
+  float:left;
+  }
+  .players{
+  float:right;
+  }
+
+}
+
+

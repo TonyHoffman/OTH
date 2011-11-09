@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  opponent: MyString
+  date: 2011-10-11 14:09:26
+  franchise: 
+  is_scored: false
+
+two:
+  opponent: MyString
+  date: 2011-10-11 14:09:26
+  franchise: 
+  is_scored: false
