@@ -22,7 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :position %><br />
-    <%= f.select :position, Player::POSITIONS %>
+    <%= f.select :position, Player::POSITIONS, prompt: 'Select Player Position' %>
   </div>
   <div class="field">
     <%= f.label :first_game %><br />

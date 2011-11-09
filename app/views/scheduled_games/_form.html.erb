@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :opponent %><br />
-    <%= game.select :opponent, Franchise::TEAMS %>
+    <%= game.select :opponent, Franchise::TEAMS, prompt: 'Select an Opponent' %>
   </div>
 
   <div class="field">

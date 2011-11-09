@@ -7,7 +7,7 @@
 <%= form_for([@franchise, @franchise.scheduled_games.build]) do |game| %>
   <div class="field">
     <%= game.label :opponent %><br />
-    <%= game.select :opponent, Franchise::TEAMS %>
+    <%= game.select :opponent, Franchise::TEAMS, prompt: 'Select an Opponent' %>
   </div>
   <div class="field">
     <%= game.label :date %><br />
@@ -35,7 +35,7 @@
   
   <div class="field">
     <%= player.label :position %>
-    <%= player.select :position, Player::POSITIONS %>
+    <%= player.select :position, Player::POSITIONS, prompt: 'Select Player Position' %>
   </div>
   
   <div class="field">

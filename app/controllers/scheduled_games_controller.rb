@@ -8,8 +8,7 @@ class ScheduledGamesController < ApplicationController
  
  def edit
    @franchise = Franchise.find(params[:franchise_id])
-    @scheduled_game = @franchise.scheduled_games.find(params[:id])
-    # redirect_to edit_franchise_path(@franchise)
+   @scheduled_game = @franchise.scheduled_games.find(params[:id])
  end
  
  def update
