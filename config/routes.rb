@@ -1,5 +1,8 @@
 OTH::Application.routes.draw do
-  resources :franchises
+  resources :franchises do
+    resources :scheduled_games
+    resources :players
+  end
 
   resources :fans
 

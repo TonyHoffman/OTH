@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="team_header">
 <p>
   <b>Name:</b>
   <%= @franchise.name %>
@@ -10,6 +11,31 @@
   <%= @franchise.season %>
 </p>
 
+  <%= link_to 'Edit', edit_franchise_path(@franchise) %> |
+  <%= link_to 'Back', franchises_path %>
+</div>
+<div class="team_details">
+<div class = "scheduled_games">
+<h2>Games</h2>
+  <% @franchise.scheduled_games.each do |game| %>
+  <p>
+    <b>Opponent:</b>
+    <%= game.opponent %>
+  </p>
+ 
+  <p>
+    <b>date:</b>
+    <%= game.date %>
+  </p>
+<% end %>
 
-<%= link_to 'Edit', edit_franchise_path(@franchise) %> |
-<%= link_to 'Back', franchises_path %>
+</div>
+<div class= "players">
+ <h2>Players</h2>
+ 
+ <% @franchise.players.each do |player|%>
+  
+ <% end %>  
+</div>
+
+</div>

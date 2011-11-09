@@ -1,0 +1,26 @@
+<%= form_for [@franchise, @scheduled_game] do |f| %>
+  <% if @scheduled_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scheduled_game.errors.count, "error") %> prohibited this scheduled game from being saved:</h2>
+
+      <ul>
+      <% @scheduled_game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opponent %><br />
+    <%= game.select :opponent, Franchise::TEAMS, prompt: 'Select an Opponent' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
